@@ -1,5 +1,5 @@
 const Task=require('../models/task');
-const {updateTaskShma,createTaskSchema, updateTaskSchema}=require('../middlewaare/joi');
+const {updateTaskSchema,createTaskSchema, updateTaskSchema}=require('../middlewaare/joi');
 const getAllTasks=async(req,res)=>{
     try{
 const tasks=await Task.find().populate('user','name ');
@@ -25,7 +25,7 @@ const task=await  Task.findById(req.params.id).populate('user','name ');
    
 }
 const createTask=async(req,res)=>{
-    const {name,description,TaskDate,status}=req.body;
+    const {name,description,TaskDate,status,user}=req.body;
     const {error,value}=createTaskSchema.validate(req.body);
     if(error){
         return res.status(400).json({message:error.details[0].message});
@@ -40,7 +40,7 @@ const createTask=async(req,res)=>{
     res.status(201).json(task);
 };
 const updateTask=async(req,res)=>{
-    const {name,description,TaskDate,status}=req.body;
+    const {name,description,TaskDate,status,user}=req.body;
     const {error,value}=updateTaskSchema.validate(req.body);
     if(error){
         return res.status(400).json({message:error.details[0].message});
