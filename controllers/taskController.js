@@ -1,5 +1,5 @@
 const Task=require('../models/task');
-const {updateTaskSchema,createTaskSchema, updateTaskSchema}=require('../middlewaare/joi');
+const {updateTaskSchema,createTaskSchema}=require('../middlewaare/joi');
 const getAllTasks=async(req,res)=>{
     try{
 const tasks=await Task.find().populate('user','name ');
