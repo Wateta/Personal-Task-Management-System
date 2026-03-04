@@ -5,7 +5,7 @@ const config=require('config');
 const connectDB=require('./config/db');
 const taskRoutes=require('./routes/taskRoutes');
 const userRoutes=require('./routes/userRoutes');
-const cors=require('cors');
+const cors=require('cors'); 
 const morgan=require('morgan');
 
 console.log('MONGO_URI =', process.env.MONGO_URI);

@@ -2,22 +2,31 @@ const mongoose = require('mongoose');
 
 const taskSchema = new mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true
     },
-    description: {
-      type: String
+    category:{
+  type:String,
+  enum: ['Work', 'Personal', 'Health', 'Learning', 'Finance'],
+   required: true
     },
-    TaskDate: {
+    priority:{
+      type:String,
+      enum:['low','medium','high'],
+      default:'medium'
+      
+    },
+     status:{
+      type:String,
+      enum:['Pending','In Progress','Completed'],
+      default:'Pending'
+    },
+    
+    duedate: {
       type: Date
     },
-    status: {
-      type: String,
-      enum: ['Pending', 'In Progress', 'Completed'],
-      default: 'Pending'
-    },
-    // user is the owner of the task
+    
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
@@ -25,7 +34,7 @@ const taskSchema = new mongoose.Schema(
     }
   },
   {
-    timestamps: true // ✅ Correct place: second argument to Schema
+    timestamps: true 
   }
 );
 
