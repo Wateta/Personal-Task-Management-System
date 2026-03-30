@@ -1,0 +1,158 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.landing1-page {
+  min-height: 100vh;
+  background-image: url("./ptm2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.landing1-header {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0 40px;
+}
+
+.landing1-logo {
+  font-size: 60px;
+  line-height: 1;
+}
+
+.landing1-logotext {
+  font-size: 38px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -6px;
+  margin-left: 10px;
+}
+
+.landing1-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-left: auto;
+}
+
+.landing1-link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.landing1-link:hover { opacity: 0.8; }
+
+.landing1-signup {
+  text-decoration: none;
+  color: #152c20;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: white;
+  padding: 10px 22px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.landing1-signup:hover {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.landing1-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.landing1-hero-title {
+  font-size: 8rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -15px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.landing1-hero-span {
+  color: white;
+}
+
+.landing1-hero-sub {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.landing1-hero-p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.landing1-btns {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.landing1-btns a { text-decoration: none; }
+
+.landing1-btn-explore {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  color: #152c20;
+  border: none;
+  width: 180px;
+  height: 55px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.landing1-btn-explore:hover {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.landing1-btn-signup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  width: 180px;
+  height: 55px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.landing1-btn-signup:hover {
+  background-color: white;
+  color: #152c20;
+}
