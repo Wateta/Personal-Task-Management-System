@@ -11,19 +11,7 @@ const getUserById=async(req,res)=>{
     }
     res.json(user);
 }
-const createUser=async(req,res)=>{
-    const {name,email,password}=req.body;
-    const {error,value}=userRegisterSchema.validate(req.body);
-    if(error){
-        return res.status(400).json({message:error.details[0].message});
-    }
-    const user=await User.create({
-        name:value.name,
-        email:value.email,
-        password:value.password
-    });
-    res.status(201).json(user);
-}
+
 const updateUser=async(req,res)=>{
     const {name,email,password}=req.body;
     const {error,value}=userRegisterSchema.validate(req.body);
@@ -40,7 +28,6 @@ const deleteUser=async(req,res)=>{
 module.exports={
     getAllUsers,
     getUserById,
-    createUser,
     updateUser,
     deleteUser
 };

@@ -5,6 +5,7 @@ const config=require('config');
 const connectDB=require('./config/db');
 const taskRoutes=require('./routes/taskRoutes');
 const userRoutes=require('./routes/userRoutes');
+const authRoutes=require('./routes/authroutes');
 const cors=require('cors'); 
 const morgan=require('morgan');
 
@@ -19,6 +20,7 @@ if(config.get('env')==='development'){
 }
 app.use('/api/tasks',taskRoutes);
 app.use('/api/users',userRoutes);
+app.use('/api/auth',authRoutes);
 const PORT=config.get('port');
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`);
