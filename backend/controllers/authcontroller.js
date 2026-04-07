@@ -43,9 +43,11 @@ const register = async (req, res) => {
                 subject: 'Verify Your Email',
                 message
             });
+            console.log(`Verification email sent to ${user.email}`);
         } catch (emailError) {
-            console.error('Error sending email:', emailError);
-            return res.status(500).json({ message: 'User registered but failed to send verification email' });
+            console.error('Error sending email:', emailError.message);
+            // Don't fail registration if email fails, but log it
+            console.warn(`Email failed for user ${user._id}, but registration succeeded`);
         }
 
         res.status(201).json({
@@ -58,8 +60,8 @@ const register = async (req, res) => {
             }
         });
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ message: 'Server error during registration' });
+        console.error('Registration error:', err);
+        res.status(500).json({ message: 'Server error during registration: ' + err.message });
     }
 };
 

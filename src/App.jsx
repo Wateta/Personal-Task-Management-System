@@ -30,9 +30,16 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/signup" element={<SignUpForm />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/landing" element={<LandingPage />} />
         
-        {/* Protected Routes */}
+        {/* Protected Routes - Require Login */}
+        <Route 
+          path="/landing" 
+          element={
+            <ProtectedRoute>
+              <LandingPage />
+            </ProtectedRoute>
+          } 
+        />
         <Route 
           path="/dashboard" 
           element={
